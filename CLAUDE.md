@@ -4,44 +4,60 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MemoirCraftCoach is a memoir and creative writing coaching application. This is a new repository - consult with the user about their vision for the project architecture and technology stack before making assumptions.
+**Memoir Remix Studio** is an educational web application that teaches memoir craft through interactive filtering and visualization. Users can see how the same memoir content transforms across different genres and visual formats, with annotations explaining the craft choices.
 
-## Project Initialization
+## Technology Stack
 
-This repository is currently empty. When initializing the project, work with the user to determine:
+- **Frontend**: Pure HTML, CSS, JavaScript (no build process)
+- **Visualization**: P5.js for animated transitions and dynamic layouts
+- **Deployment**: GitHub Pages (static site)
+- **Content**: Pre-written memoir scenes with genre variations stored in JavaScript data files
 
-- **Technology Stack**: Frontend framework (React, Vue, etc.), backend (Node.js, Python, etc.), or full-stack framework (Next.js, etc.)
-- **Purpose**: Writing coach AI, content management system, interactive memoir builder, etc.
-- **Key Features**: Writing prompts, progress tracking, AI feedback, collaborative editing, etc.
+## Development Workflow
 
-## Development Workflow (To Be Established)
+This is a static site with no build process. To develop:
 
-Once the project structure is established, update this section with:
+```bash
+# Serve locally with any static server
+python -m http.server 8000
+# or
+npx serve
+```
 
-- Build commands
-- Test commands
-- Linting and formatting
-- Local development server setup
-- Environment configuration
+Open `index.html` in a browser to test changes.
 
-## Architecture Considerations
+## Architecture
 
-When designing the architecture for MemoirCraftCoach, consider:
+### File Structure
 
-### Core Components (Potential)
+```
+/
+├── index.html              # Main application page
+├── styles.css              # Gem-tone palette, script fonts, responsive layout
+├── app.js                  # Core application logic, filter handling
+├── data/
+│   ├── scenes.js           # 3 base memoir scenes
+│   ├── genre-variations.js # 21 genre variations (7 genres × 3 scenes)
+│   └── annotations.js      # Craft explanations for each genre
+└── README.md
+```
 
-- **Writing Interface**: Editor or prompt system for memoir creation
-- **Coaching Engine**: AI-powered feedback and guidance system
-- **User Management**: Authentication and user profiles
-- **Content Storage**: Persistence layer for drafts, completed work, and progress
-- **Prompt Library**: Curated writing prompts and exercises
+### Core Components
+
+1. **Genre Filters**: 7 options (Thriller, Noir, Literary Fiction, Hero's Journey, Sci-Fi Dystopia, Horror, Interactive Fiction)
+2. **Style Formats**: 4 visual layouts (Comic Panels, Photo Essay, Fragmented Vignettes, Traditional Prose)
+3. **Content Display**: P5.js canvas for dynamic visual rendering
+4. **Annotations Panel**: Context-aware craft explanations
+5. **User Input**: Textarea for custom scenes (layout-only transformations)
+6. **Download**: Export current view as standalone HTML
 
 ### Data Flow
 
-Document the data flow once architecture is established, particularly:
-- How writing content is processed and stored
-- How AI coaching feedback is generated and delivered
-- User progress tracking and analytics
+1. User selects genre filter + style format
+2. App loads pre-written variation from `genre-variations.js` (for default scenes) or uses original text (for user input)
+3. P5.js renders content in selected visual format with animated transitions
+4. Annotations display craft choices specific to selected genre
+5. Download button generates standalone HTML file with current view
 
 ## Branch Strategy
 

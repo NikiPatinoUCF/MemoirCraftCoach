@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoir Remix Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Memoir Remix Studio</h1>
+        <p class="tagline">See how memoir transforms across genres and formats</p>
+    </header>
+
+    <main>
+        <div class="controls-container">
+            <!-- Scene Selection -->
+            <section class="control-section">
+                <h2>Select Scene</h2>
+                <div class="scene-selector">
+                    <button class="scene-btn active" data-scene="0">Scene 1</button>
+                    <button class="scene-btn" data-scene="1">Scene 2</button>
+                    <button class="scene-btn" data-scene="2">Scene 3</button>
+                    <button class="scene-btn custom-toggle" data-scene="custom">Custom</button>
+                </div>
+                <div class="custom-input-container hidden">
+                    <label for="customText">Enter your memoir scene:</label>
+                    <textarea id="customText" placeholder="Paste or write your memoir scene here..." rows="6"></textarea>
+                    <button id="applyCustom" class="apply-btn">Apply Custom Scene</button>
+                </div>
+            </section>
+
+            <!-- Genre Filters -->
+            <section class="control-section">
+                <h2>Choose Genre</h2>
+                <div class="genre-filters">
+                    <button class="filter-btn active" data-genre="original">Original</button>
+                    <button class="filter-btn" data-genre="thriller">Thriller</button>
+                    <button class="filter-btn" data-genre="noir">Noir</button>
+                    <button class="filter-btn" data-genre="literary">Literary Fiction</button>
+                    <button class="filter-btn" data-genre="hero">Hero's Journey</button>
+                    <button class="filter-btn" data-genre="scifi">Sci-Fi Dystopia</button>
+                    <button class="filter-btn" data-genre="horror">Horror</button>
+                    <button class="filter-btn" data-genre="interactive">Interactive Fiction</button>
+                </div>
+            </section>
+
+            <!-- Style Formats -->
+            <section class="control-section">
+                <h2>Choose Format</h2>
+                <div class="format-selector">
+                    <button class="format-btn active" data-format="prose">Traditional Prose</button>
+                    <button class="format-btn" data-format="comic">Comic Panels</button>
+                    <button class="format-btn" data-format="photo">Photo Essay</button>
+                    <button class="format-btn" data-format="vignettes">Fragmented Vignettes</button>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <section class="control-section actions">
+                <button id="downloadBtn" class="action-btn">Download Preview (HTML)</button>
+            </section>
+        </div>
+
+        <div class="content-container">
+            <!-- P5.js Canvas -->
+            <div id="p5-container"></div>
+
+            <!-- Annotations Panel -->
+            <aside class="annotations-panel">
+                <h3>Craft Notes</h3>
+                <div id="annotationsContent">
+                    <p>Select a genre to see how craft choices transform the narrative.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>An educational tool for exploring memoir craft • Built with P5.js</p>
+    </footer>
+
+    <!-- Data Files -->
+    <script src="data/scenes.js"></script>
+    <script src="data/genre-variations.js"></script>
+    <script src="data/annotations.js"></script>
+
+    <!-- Application -->
+    <script src="app.js"></script>
+</body>
+</html>

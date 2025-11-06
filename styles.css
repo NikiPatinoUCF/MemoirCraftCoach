@@ -1,0 +1,389 @@
+/* ========================================
+   Memoir Remix Studio - Styles
+   Gem-tone palette with script typography
+   ======================================== */
+
+:root {
+    /* Gem-tone Color Palette */
+    --emerald: #2d6e5a;
+    --ruby: #9b2847;
+    --sapphire: #1e4d7b;
+    --amethyst: #6b4c7c;
+    --gold: #d4af37;
+    --charcoal: #2b2d2e;
+    --cream: #f7f5f0;
+    --pearl: #e8e6e0;
+
+    /* Typography */
+    --font-script: 'Special Elite', monospace;
+    --font-body: 'Courier Prime', monospace;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+
+header {
+    background: linear-gradient(135deg, var(--emerald), var(--sapphire));
+    color: var(--cream);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   Main Layout
+   ======================================== */
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: var(--spacing-lg);
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.control-section {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--emerald);
+}
+
+.control-section h2 {
+    font-family: var(--font-script);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--sapphire);
+}
+
+/* ========================================
+   Scene Selection
+   ======================================== */
+
+.scene-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.scene-btn {
+    font-family: var(--font-body);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--pearl);
+    border: 2px solid var(--emerald);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.scene-btn:hover {
+    background: var(--emerald);
+    color: white;
+}
+
+.scene-btn.active {
+    background: var(--emerald);
+    color: white;
+    font-weight: bold;
+}
+
+.custom-input-container {
+    margin-top: var(--spacing-sm);
+}
+
+.custom-input-container.hidden {
+    display: none;
+}
+
+.custom-input-container label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--sapphire);
+}
+
+#customText {
+    width: 100%;
+    font-family: var(--font-body);
+    padding: var(--spacing-sm);
+    border: 2px solid var(--pearl);
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 0.9rem;
+}
+
+#customText:focus {
+    outline: none;
+    border-color: var(--emerald);
+}
+
+.apply-btn {
+    margin-top: var(--spacing-xs);
+    width: 100%;
+    padding: var(--spacing-xs);
+    background: var(--sapphire);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: var(--emerald);
+}
+
+/* ========================================
+   Genre Filters
+   ======================================== */
+
+.genre-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.filter-btn {
+    font-family: var(--font-body);
+    padding: var(--spacing-sm);
+    background: var(--pearl);
+    border: 2px solid var(--ruby);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    background: var(--ruby);
+    color: white;
+    transform: translateX(4px);
+}
+
+.filter-btn.active {
+    background: var(--ruby);
+    color: white;
+    font-weight: bold;
+    border-left-width: 6px;
+}
+
+/* ========================================
+   Format Selector
+   ======================================== */
+
+.format-selector {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.format-btn {
+    font-family: var(--font-body);
+    padding: var(--spacing-sm);
+    background: var(--pearl);
+    border: 2px solid var(--amethyst);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.format-btn:hover {
+    background: var(--amethyst);
+    color: white;
+    transform: translateX(4px);
+}
+
+.format-btn.active {
+    background: var(--amethyst);
+    color: white;
+    font-weight: bold;
+    border-left-width: 6px;
+}
+
+/* ========================================
+   Actions
+   ======================================== */
+
+.actions {
+    border-left-color: var(--gold);
+}
+
+.action-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--gold);
+    color: var(--charcoal);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-script);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:hover {
+    background: var(--emerald);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Content Display
+   ======================================== */
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+#p5-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+    padding: var(--spacing-md);
+    border: 3px solid var(--sapphire);
+}
+
+/* ========================================
+   Annotations Panel
+   ======================================== */
+
+.annotations-panel {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--gold);
+}
+
+.annotations-panel h3 {
+    font-family: var(--font-script);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--ruby);
+}
+
+#annotationsContent {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+#annotationsContent p {
+    margin-bottom: var(--spacing-sm);
+}
+
+#annotationsContent strong {
+    color: var(--ruby);
+    font-weight: bold;
+}
+
+#annotationsContent em {
+    color: var(--amethyst);
+    font-style: italic;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--charcoal);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: var(--spacing-sm);
+    }
+
+    .scene-selector {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   P5.js Canvas Styling
+   ======================================== */
+
+canvas {
+    display: block;
+    border-radius: 4px;
+}
